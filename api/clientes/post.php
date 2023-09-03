@@ -10,7 +10,7 @@ if($acao == 'adiciona' && $param == ''){
     $sql .= ") VALUES (";
     $sql .= implode(",", array_map('aspas', array_values($_POST)));
     $sql .= ")";
-
+    
     $db = DB::connect();
     $rs = $db->prepare($sql);
     $exec = $rs->execute();
@@ -20,8 +20,4 @@ if($acao == 'adiciona' && $param == ''){
     } else {
         echo json_encode(["dados" => 'Houve algum erro ao inserir os dados.']);
     }
-}
-
-function aspas($x){
-    return "'$x'";
 }

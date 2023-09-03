@@ -10,4 +10,12 @@ if ($api == 'clientes'){
         include_once "post.php";
     }
 
+    if($method == 'POST' && $_POST['_method'] == 'PUT'){
+        include_once "put.php";
+    }
+
+}
+
+function aspas($x){
+    return "'$x'";
 }

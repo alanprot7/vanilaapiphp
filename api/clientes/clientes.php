@@ -10,8 +10,12 @@ if ($api == 'clientes'){
         include_once "post.php";
     }
 
-    if($method == 'POST' && $_POST['_method'] == 'PUT'){
+    if($method == 'POST' && isset($_POST['_method']) && $_POST['_method'] == 'PUT'){
         include_once "put.php";
+    }
+    
+    if($method == 'POST' && isset($_POST['_method']) && $_POST['_method'] == 'DELETE'){
+        include_once "delete.php";
     }
 
 }
